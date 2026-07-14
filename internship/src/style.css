@@ -17,13 +17,13 @@
 .Extensions_List{
     border: none;
     position: relative;
-    left: 170px;
+    left: 0px;
 }
 
 .Buttons{
     border-radius: 150px;
     position: relative;
-    left: 650px;
+    left: 350px;
 }
 
 .Remove{
