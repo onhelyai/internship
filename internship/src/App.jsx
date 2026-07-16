@@ -4,32 +4,28 @@ import "./style.css";
 import ExtensionCard from "./ExtensionCard.jsx";
 import data from "./data.json"
 
-const filteredData = data.filter((extension) => {
-  if (filter === "all") {
-    return true;
-  }
-
-  if (filter === "active") {
-    return extension.isActive;
-  }
-
-  if (filter === "inactive") {
-    return !extension.isActive;
-  }
-});
-
 function App() {
 
   const[filter, setFilter] = useState("all");
 
+  const filteredData = data.filter((extension) => {
+    if (filter === "all") {
+      return true;
+    }
+    if (filter === "active") {
+      return extension.isActive;
+    }
+    if (filter === "inactive") {
+      return !extension.isActive;
+    }
+  });
+  
   return (
     <div>
       <div className= "Extensions">
       <img src="/assets/images/logo.svg" alt=""></img>
       <img src="/assets/images/icon-moon.svg" alt="" class="moon"></img>
     </div>
-
-    const[filter, setFilter] = useState("all");
 
     <div className="List">
       <h2 className = "Extensions_List">
