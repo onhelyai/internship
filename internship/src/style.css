@@ -1,17 +1,54 @@
+body{
+    margin: 0;
+}
+
+.light {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    min-height: 100vh;
+}
+
+.dark {
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    min-height: 100vh;
+}
+
+.dark .Extensions,
+.dark .DevLens {
+    background: hsl(226, 25%, 17%);
+    border-color: hsl(225, 23%, 24%);
+    color: hsl(200, 60%, 99%);
+}
+
+.dark .Extensions_List,
+.dark h4 {
+    color: hsl(200, 60%, 99%);
+}
+
+.dark p {
+    color: hsl(0, 0%, 78%);
+}
+
+.dark .Buttons,
+.dark .Remove {
+    background: hsl(226, 25%, 17%);
+    color: hsl(200, 60%, 99%);
+    border-color: hsl(225, 23%, 24%);
+}
+
 .Extensions{
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
     width: 950px;
-    margin: 0 auto;
-    position: relative;
-    left: 10px;
+    margin: 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .moon{
-    border: none;
-    position: relative;
-    left: 750px;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .Extensions_List{
@@ -45,5 +82,9 @@
     grid-template-columns: repeat(3, 324px);
     gap: 2px;
     width: 950px;
-    margin: 0 auto;
+    margin: auto;
+}
+
+.id{
+    background-color: transparent;
 }
