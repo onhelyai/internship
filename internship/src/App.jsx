@@ -25,7 +25,8 @@ function App() {
   const toggleActive = (name) => {
     setExtensions((prev) =>
       prev.map((extension) =>
-        extension.name === name ? { ...extension, isActive: !extension.isActive } : extension
+        extension.name === name ? { name: extension.name, logo: extension.logo,
+           description: extension.description, isActive: !extension.isActive } : extension
       )
     );
   };
@@ -39,7 +40,7 @@ function App() {
     <div>
       <div className= "Extensions">
         <img src="/assets/images/logo.svg" alt=""></img>
-        <img src={isDark ? "/assets/images/icon-moon.svg" : "/assets/images/icon-sun.svg"} 
+        <img src={!isDark ? "/assets/images/icon-moon.svg" : "/assets/images/icon-sun.svg"} 
           alt="" className="moon" onClick={()=>setIsDark(!isDark)}></img>
       </div>
 

@@ -3,15 +3,19 @@ import { useState } from "react";
 function ExtensionCard({ logo, name, description, isActive, onToggle, onRemove }) {
   return (
     <div className="DevLens">
-      <img src={logo} alt=""></img>
-      <div>
-        <h4>{name}</h4>
-        <p>{description}</p>
+      <div className="Text">
+        <img src={logo} alt=""></img>
+        <div>
+          <h4>{name}</h4>
+          <p>{description}</p>
+        </div>
       </div>
-      <button className="Remove" onClick={onRemove}>Remove</button>
-      <button className="Remove" onClick={onToggle}>
-        {isActive ? "Active" : "Inactive"}
-      </button>
+      <div className="Buts">
+        <button className="Remove" onClick={onRemove}>Remove</button>
+        <button className="Remove" onClick={onToggle}>
+          {isActive ? "Active" : "Inactive"}
+        </button>
+      </div>
     </div>
   );
 }
