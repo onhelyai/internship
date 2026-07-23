@@ -1,7 +1,9 @@
 import { useState } from "react";
-import "./App.css";
 import "./style.css";
+import "./Buttons.css";
+import "./ExtensionCard.css";
 import ExtensionCard from "./components/ExtensionCard.jsx";
+import Extensions from "./components/Extensions.jsx"
 import initialData from "./data.json"
 
 function App() {
@@ -37,25 +39,28 @@ function App() {
 
   return (
     <div className={isDark ? "dark" : "light"}>
-    <div>
-      <div className= "Extensions">
-        <img src="/assets/images/logo.svg" alt=""></img>
-        <img src={!isDark ? "/assets/images/icon-moon.svg" : "/assets/images/icon-sun.svg"} 
-          alt="" className="moon" onClick={()=>setIsDark(!isDark)}></img>
+
+      <div className="Ext">
+
+        <Extensions
+        Theme={() => setIsDark(!isDark)}
+        />
+
+        <div className="List">
+          <h1 className = "Extensions_List">
+            Extensions List
+          </h1>
+          <div className="Buttons_List">
+            <button className={filter === "all" ? "FilterButtons" : "Buttons"} onClick={() => setFilter("all")}>All</button>
+            <button className={filter === "active" ? "FilterButtons" : "Buttons"} onClick={() => setFilter("active")}>Active</button>
+            <button className={filter === "inactive" ? "FilterButtons" : "Buttons"} onClick={() => setFilter("inactive")}>Inactive</button>
+          </div>
+        </div>
       </div>
 
-    <div className="List">
-      <h2 className = "Extensions_List">
-        Extensions List
-        <button className="Buttons" onClick={() => setFilter("all")}>All</button>
-        <button className="Buttons" onClick={() => setFilter("active")}>Active</button>
-        <button className="Buttons" onClick={() => setFilter("inactive")}>Inactive</button>
-      </h2>
-    </div>
-
-    <div className="Container">
-      {filteredData.map((extension) => (
-        <ExtensionCard
+      <div className="Container">
+        {filteredData.map((extension) => (
+          <ExtensionCard
           key={extension.name}
           logo = {extension.logo}
           name = {extension.name}
@@ -66,8 +71,6 @@ function App() {
         />
       ))}
 
-      
-    </div>
     </div>
 
     <footer className="attribution">

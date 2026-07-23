@@ -6,14 +6,15 @@ function ExtensionCard({ logo, name, description, isActive, onToggle, onRemove }
       <div className="Text">
         <img src={logo} alt=""></img>
         <div>
-          <h4>{name}</h4>
+          <h3>{name}</h3>
           <p>{description}</p>
         </div>
       </div>
       <div className="Buts">
         <button className="Remove" onClick={onRemove}>Remove</button>
-        <button className="Remove" onClick={onToggle}>
-          {isActive ? "Active" : "Inactive"}
+        <button className={isActive ? "switch on" : "switch"} 
+          onClick={onToggle}>
+          <span className="switch-thumb"></span>
         </button>
       </div>
     </div>
