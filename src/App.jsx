@@ -1,10 +1,11 @@
 import { useState } from "react";
-import "./style.css";
-import "./Buttons.css";
-import "./ExtensionCard.css";
+import "./styles/ExtensionCard.css";
+import "./styles/Extensions.css";
+import "./styles/List.css";
 import ExtensionCard from "./components/ExtensionCard.jsx";
 import Extensions from "./components/Extensions.jsx"
 import initialData from "./data.json"
+import List from "./components/List.jsx";
 
 function App() {
 
@@ -43,19 +44,14 @@ function App() {
       <div className="Ext">
 
         <Extensions
+        isDark={isDark}
         Theme={() => setIsDark(!isDark)}
         />
 
-        <div className="List">
-          <h1 className = "Extensions_List">
-            Extensions List
-          </h1>
-          <div className="Buttons_List">
-            <button className={filter === "all" ? "FilterButtons" : "Buttons"} onClick={() => setFilter("all")}>All</button>
-            <button className={filter === "active" ? "FilterButtons" : "Buttons"} onClick={() => setFilter("active")}>Active</button>
-            <button className={filter === "inactive" ? "FilterButtons" : "Buttons"} onClick={() => setFilter("inactive")}>Inactive</button>
-          </div>
-        </div>
+        <List
+        filter={filter}
+        setFilter={setFilter}
+        />
       </div>
 
       <div className="Container">

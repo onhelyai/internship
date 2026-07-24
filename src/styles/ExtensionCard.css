@@ -86,3 +86,17 @@
 .switch.on .switch-thumb {
   transform: translateX(18px);
 }
+
+.Container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: auto;
+    padding: 0px 35px;
+}
+
+@media (max-width: 600px) {
+  .Container{
+    grid-template-columns: 1fr;
+  }
+}

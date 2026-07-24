@@ -28,28 +28,10 @@
     color: hsl(200, 60%, 99%);
 }
 
-.dark .List,
-.dark h4 {
-    color: hsl(200, 60%, 99%);
-}
-
-.dark p {
-    color: hsl(0, 0%, 78%);
-}
-
 .light .Extensions,
 .light .DevLens {
     background: hsl(200, 60%, 99%);
     border-color: hsl(0, 0%, 78%);
-    color: hsl(227, 75%, 14%);
-}
-
-.light .List,
-.light h4 {
-    color: hsl(227, 75%, 14%);
-}
-
-.light p {
     color: hsl(227, 75%, 14%);
 }
 
@@ -64,12 +46,6 @@
     justify-content: space-between;
 }
 
-.Extensions_title{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
 .light .moon{
     border: none;
     background-color: hsl(0, 0%, 93%);
@@ -78,21 +54,6 @@
 .dark .moon {
     border: none;
     background-color: hsl(226, 11%, 37%);
-}
-
-.List{
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: auto;
-    padding: 0px 35px;
 }
 
 .Moon_Button{
@@ -115,4 +76,10 @@
     display: grid;
     row-gap: 40px;
     padding: 0px 35px;
+}
+
+@media (max-width: 600px) {
+    .Extensions{
+        width: 50%;
+    }
 }
